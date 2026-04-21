@@ -1,0 +1,48 @@
+/* =====================================================
+   SHARED ANIMATIONS
+   Consolidated keyframes used across multiple CSS files.
+   Page-specific animations remain in their own files.
+   ===================================================== */
+
+/* Fade in with upward slide */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in with larger upward slide (lobby hero, etc.) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in from right */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Bounce in (notification badges) */
+@keyframes bounce-in {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Notification highlight pulse */
+@keyframes highlightNew {
+    0% { background-color: color-mix(in srgb, var(--primary) 20%, transparent); }
+    100% { background-color: color-mix(in srgb, var(--primary) 5%, transparent); }
+}
+
+/* Badge pulse (sidebar) */
+@keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Spinner */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

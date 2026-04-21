@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('code', '500')
+@section('icon', 'fas fa-server')
+@section('title', 'Something Went Wrong')
+@section('message', 'We encountered an unexpected issue on our end. Our team has been notified. Please try again later.')

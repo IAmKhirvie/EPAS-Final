@@ -1,0 +1,78 @@
+.topic-content {
+    max-width: 100%;
+    line-height: 1.6;
+}
+
+.topic-header {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 1rem;
+}
+
+.topic-title {
+    color: var(--light);
+}
+
+h2.topic-title{
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary)
+}
+
+/* Styles for basic formatted content */
+.basic-formatting {
+    white-space: pre-wrap;
+}
+
+.basic-formatting p {
+    margin-bottom: 1rem;
+}
+
+.basic-formatting b,
+.basic-formatting strong {
+    font-weight: bold;
+    color: var(--primary-light);
+}
+
+.basic-formatting i,
+.basic-formatting em {
+    font-style: italic;
+}
+
+.basic-formatting u {
+    text-decoration: underline;
+}
+
+.basic-formatting ul,
+.basic-formatting ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.basic-formatting li {
+    margin-bottom: 0.5rem;
+}
+
+.basic-formatting code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e83e8c;
+}
+
+/* Ensure proper spacing */
+.basic-formatting br {
+    content: "";
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    margin-top: .25rem;
+    font-size: .875em;
+    color: none;
+}
+
+.dark-mode .form-text {
+    color: var(--light);
+}

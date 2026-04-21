@@ -1,0 +1,29 @@
+.d-none {
+    display: none !important;
+}
+
+/* Ensure proper spacing for the custom input */
+#customSectionInput {
+    transition: all 0.3s ease;
+    background: var(--card);
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+/* Dark mode user styles */
+.dark-mode .user-card {
+    background: var(--card);
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+.dark-mode .user-table {
+    background: var(--card);
+    color: var(--text-primary);
+}
+
+.dark-mode .user-table th,
+.dark-mode .user-table td {
+    border-color: var(--border);
+    background: var(--card);
+}

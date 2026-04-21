@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('self_checks', function (Blueprint $table) {
+            $table->boolean('is_required')->default(false)->after('is_active');
+            $table->json('parts')->nullable()->after('is_required');
+        });
+
+        // Add part_index to self_check_questions
+        Schema::table('self_check_questions', function (Blueprint $table) {
+            $table->unsignedInteger('part_index')->nullable()->after('order');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('self_checks', function (Blueprint $table) {
+            $table->dropColumn(['is_required', 'parts']);
+        });
+
+        Schema::table('self_check_questions', function (Blueprint $table) {
+            $table->dropColumn('part_index');
+        });
+    }
+};

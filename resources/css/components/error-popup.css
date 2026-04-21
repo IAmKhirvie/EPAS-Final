@@ -1,0 +1,94 @@
+.error-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.2s ease;
+}
+.error-popup-overlay.active {
+  display: flex;
+}
+.error-popup {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: slideInPopup 0.3s ease;
+  overflow: hidden;
+}
+.dark-mode .error-popup {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+.error-popup-header {
+  padding: 20px 24px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.error-popup-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.error-popup-icon.error { background: #fee2e2; color: #dc2626; }
+.error-popup-icon.warning { background: #fef3c7; color: #d97706; }
+.error-popup-icon.info { background: #fff8e1; color: #ffb902; }
+.dark-mode .error-popup-icon.error { background: #451a1a; }
+.dark-mode .error-popup-icon.warning { background: #451a00; }
+.dark-mode .error-popup-icon.info { background: #0c3a2d; }
+.error-popup-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.error-popup-body {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+.dark-mode .error-popup-body { color: #94a3b8; }
+.error-popup-footer {
+  padding: 12px 24px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.dark-mode .error-popup-footer { border-top-color: #334155; }
+.error-popup-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.error-popup-btn-primary {
+  background: #ffb902;
+  color: #0c3a2d;
+}
+.error-popup-btn-primary:hover { background: #e5a702; }
+.error-popup-btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
+.dark-mode .error-popup-btn-secondary { background: #334155; color: #cbd5e1; }
+.error-popup-btn-secondary:hover { background: #e2e8f0; }
+@keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideInPopup { from { opacity: 0; transform: scale(0.9) translateY(-10px); } to { opacity: 1; transform: scale(1) translateY(0); } }

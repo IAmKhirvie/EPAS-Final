@@ -1,0 +1,64 @@
+/* public/css/announcements.css */
+.announcement-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    background: var(--card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.announcement-item:hover {
+    background-color: var(--light);
+    transform: translateY(-1px);
+}
+
+.announcement-item.urgent {
+    border-left-color: var(--danger);
+}
+
+.notification-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.2s ease;
+    background: var(--card);
+    color: var(--text-primary);
+}
+
+.notification-item:hover {
+    background-color: var(--light);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-comment {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+}
+
+/* Dark mode styles */
+.dark-mode .announcement-item {
+    background: var(--card);
+    border-color: var(--border);
+}
+
+.dark-mode .notification-item {
+    background: var(--card);
+    border-bottom-color: var(--border);
+}

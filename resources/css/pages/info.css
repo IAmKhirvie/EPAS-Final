@@ -1,0 +1,633 @@
+
+:root {
+    --primary: #ffb902;
+    --primary-light: #ffca28;
+    --primary-dark: #bb8954;
+    --secondary: #7209b7;
+    --success: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    
+    /* Light mode colors matching reset.css */
+    --background: #f0f0f0;
+    --card-bg: #f8f9fa;
+    --card-text: #212529;
+    --card-border: #e0e0e0;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+}
+
+.dark-mode {
+    /* Dark mode colors matching reset.css */
+    --background: #202020;
+    --card-bg: #2a2a2a;
+    --card-text: #f8f9fa;
+    --card-border: #444;
+    --text-primary: #f8f9fa;
+    --text-secondary: #adb5bd;
+    --border-color: #444;
+    --light: #f8f9fa;
+    --light-gray: #3a3a3a;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar brand colors handled by public-header.css — no overrides needed here */
+
+.auth-page-body {
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 8rem;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+/* Note: .container is Bootstrap's class — only override within info pages */
+.auth-page-body > .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 8rem;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.page-header {
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    color: var(--text-primary);
+}
+
+.page-header .lead {
+    color: var(--text-secondary);
+}
+
+/* Fix all heading and text colors */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+/* Text colors scoped to content area */
+.content-container p,
+.content-container li,
+.content-container span {
+    color: var(--text-primary);
+}
+
+.info-card {
+    border-left: 4px solid var(--primary);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.info-card h3, .info-card h4 {
+    color: var(--text-primary);
+}
+
+.info-card ul li {
+    color: var(--text-primary);
+}
+
+.tesda-card {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.tesda-card h3,
+.tesda-card p {
+    color: white !important;
+}
+
+.competency-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.competency-list li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--success);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.competency-list li:hover {
+    border-left-color: var(--primary);
+    transform: translateX(5px);
+}
+
+.competency-list li i {
+    color: var(--success);
+    margin-right: 0.5rem;
+}
+
+.career-card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+    height: 100%;
+    border: 1px solid var(--border-color);
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.career-card h5 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.career-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.career-card:hover .icon-container {
+    transform: scale(1.1);
+}
+
+.icon-container i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--background);
+}
+
+.timeline-item h5 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    color: var(--card-text);
+    margin-bottom: 0;
+}
+
+
+
+/* Accordion styles for dark mode */
+.accordion {
+    --bs-accordion-bg: var(--card-bg);
+    --bs-accordion-color: var(--card-text);
+    --bs-accordion-border-color: var(--border-color);
+    --bs-accordion-btn-color: var(--card-text);
+    --bs-accordion-btn-bg: var(--card-bg);
+    --bs-accordion-active-bg: var(--primary);
+    --bs-accordion-active-color: white;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--primary);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: var(--primary);
+}
+
+.accordion-body {
+    background: var(--card-bg);
+    color: var(--card-text);
+}
+
+/* Contact page specific styles */
+.contact-map-container {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+}
+
+.contact-card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    height: 100%;
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.contact-card h5 {
+    color: var(--text-primary);
+}
+
+.contact-card p {
+    color: var(--text-secondary);
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.contact-icon i {
+    font-size: 1.75rem;
+    color: white;
+}
+
+.contact-info {
+    background: var(--card-bg) !important;
+    color: var(--card-text) !important;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info h4,
+.contact-info h6 {
+    color: var(--text-primary);
+}
+
+.contact-details p,
+.address-details p {
+    color: var(--text-secondary);
+}
+
+/* Button styles for dark mode */
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Footer styles - use specific class to avoid conflicts */
+.footer.footer {
+    background: #1e293b !important;
+    color: #f8f9fa !important;
+    margin-top: 3rem;
+}
+
+.footer.footer h5,
+.footer.footer p {
+    color: #f8f9fa !important;
+}
+
+.footer.footer a {
+    color: #94a3b8 !important;
+}
+
+.footer.footer a:hover {
+    color: #ffb902 !important;
+}
+
+/* Dark mode footer overrides */
+.dark-mode .footer.footer {
+    background: #0a0a0a !important;
+}
+
+/* Remove the problematic global color rules and replace with proper inheritance */
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.lead {
+    color: var(--text-secondary);
+}
+
+/* Map container adjustments */
+#map {
+    border: 1px solid var(--border-color);
+}
+
+/* ===== MOBILE (≤1032px) ===== */
+@media (max-width: 1032px) {
+    .content-container {
+        padding: 1.25rem;
+        padding-top: 5rem;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .auth-page-body > .container {
+        padding: 1.25rem;
+        padding-top: 5rem;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .page-header .lead {
+        font-size: 0.95rem;
+    }
+
+    /* Stack career cards properly */
+    .career-card {
+        margin-bottom: 1rem;
+    }
+
+    .career-card:hover {
+        transform: none;
+    }
+
+    /* Info cards */
+    .info-card {
+        padding: 1.25rem;
+    }
+
+    .info-card:hover {
+        transform: none;
+    }
+
+    /* Timeline */
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1.5rem;
+    }
+
+    /* TESDA card */
+    .tesda-card {
+        padding: 1.5rem;
+    }
+
+    /* Contact page */
+    .contact-map-container iframe {
+        height: 250px;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-card:hover {
+        transform: none;
+    }
+
+    .contact-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .contact-icon i {
+        font-size: 1.5rem;
+    }
+
+    /* FAQ accordion */
+    .accordion-button {
+        font-size: 0.95rem;
+        padding: 0.875rem 1rem;
+    }
+
+    .accordion-body {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+
+    /* Other campus section */
+    .contact-info {
+        padding: 1.25rem !important;
+    }
+
+    /* Footer spacing fix */
+    .footer {
+        margin-top: 0 !important;
+    }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+    .content-container,
+    .auth-page-body > .container {
+        padding: 1rem;
+        padding-top: 4.5rem;
+    }
+
+    .page-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-header .lead {
+        font-size: 0.875rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Career cards */
+    .icon-container {
+        width: 48px;
+        height: 48px;
+    }
+
+    .icon-container i {
+        font-size: 1.25rem;
+    }
+
+    /* Competency list */
+    .competency-list li {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .competency-list li:hover {
+        transform: none;
+    }
+
+    /* Timeline compact */
+    .timeline {
+        padding-left: 1.25rem;
+    }
+
+    .timeline-item {
+        padding: 0.75rem;
+    }
+
+    .timeline-item::before {
+        left: -1.25rem;
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Contact page */
+    .contact-map-container iframe {
+        height: 200px;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
+    }
+
+    /* Buttons stack on small screens */
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+
+    .d-flex.gap-3 .btn {
+        width: 100%;
+    }
+
+    /* Row spacing */
+    .row.mb-5 {
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* ===== EXTRA SMALL (≤380px) ===== */
+@media (max-width: 380px) {
+    .content-container,
+    .auth-page-body > .container {
+        padding: 0.75rem;
+        padding-top: 4rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+    }
+
+    .tesda-card {
+        padding: 1.25rem;
+    }
+
+    .tesda-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .contact-map-container {
+        padding: 0.75rem;
+    }
+
+    .contact-map-container iframe {
+        height: 180px;
+    }
+}

@@ -1,0 +1,320 @@
+.circle-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) 0%, var(--light) 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.circle-progress::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--card-bg);
+}
+
+.circle-progress-value {
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.grade-display h1 {
+    font-size: 3rem;
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.card-counter {
+    font-size: 1.75rem; /* 28px */
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.card-counter-label {
+    font-size: 0.875rem;
+    color: var(--muted-foreground, #6c757d);
+}
+
+/* Responsive dashboard cards */
+@media (max-width: 576px) {
+    .card-counter {
+        font-size: 1.5rem;
+    }
+
+    .card-counter-label {
+        font-size: 0.75rem;
+    }
+}
+
+.urgent-item {
+    border-left: 4px solid var(--warning) !important;
+}
+
+/* public/css/dashboard.css */
+.circle-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.circle-progress-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.progress-bg {
+    fill: none;
+    stroke: var(--light);
+    stroke-width: 8;
+}
+
+.progress-fill {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.module-item, .assessment-item, .pending-item, .announcement-item {
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--border);
+}
+
+.module-item:hover, .assessment-item:hover, .pending-item:hover, .announcement-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Progress Circle Styles */
+.progress-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) var(--progress, 0%), var(--light) 0%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.progress-circle::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--card-bg);
+    border-radius: 50%;
+}
+
+.progress-text {
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+/* Dark mode dashboard styles */
+.dark-mode .module-item,
+.dark-mode .assessment-item,
+.dark-mode .pending-item,
+.dark-mode .announcement-item {
+    background: var(--card-bg);
+    border-color: var(--border);
+}
+
+.dark-mode .progress-bg {
+    stroke: var(--light);
+}
+
+.dark-mode .announcement-item {
+    background: var(--card-bg);
+    border-color: var(--border);
+}
+
+.dark-mode .announcement-item.urgent {
+    border-left-color: var(--danger);
+    background: rgba(220, 53, 69, 0.05);
+}
+
+.dark-mode .announcement-item:hover {
+    background: var(--light);
+}
+
+.dark-mode .text-decoration-none.text-dark {
+    color: var(--text-primary) !important;
+}
+
+.dark-mode .border-danger.bg-light-danger {
+    background: rgba(220, 53, 69, 0.1) !important;
+    border-color: var(--danger) !important;
+}
+
+/* Scrollable containers */
+.dashboard-feed-scroll {
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+.dashboard-pending-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Activity icon */
+.activity-icon-sm {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Responsive scrollable containers */
+@media (max-width: 576px) {
+    .dashboard-feed-scroll {
+        max-height: 400px;
+    }
+
+    .dashboard-pending-scroll {
+        max-height: 300px;
+    }
+}
+
+/* ===== MOBILE DASHBOARD ENHANCEMENTS ===== */
+@media (max-width: 1032px) {
+    /* Better stat card layout */
+    .card-counter {
+        font-size: 1.375rem;
+    }
+
+    .card-counter-label {
+        font-size: 0.75rem;
+    }
+
+    /* Progress circles scale down */
+    .circle-progress,
+    .progress-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .circle-progress::before,
+    .progress-circle::before {
+        width: 72px;
+        height: 72px;
+    }
+
+    .circle-progress-value,
+    .progress-text {
+        font-size: 1.15rem;
+    }
+
+    /* Dashboard items — tighter spacing */
+    .module-item, .assessment-item, .pending-item, .announcement-item {
+        padding: 0.75rem;
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+    }
+
+    .module-item:hover, .assessment-item:hover, .pending-item:hover, .announcement-item:hover {
+        transform: none; /* Disable hover lift on mobile */
+    }
+
+    /* Activity icon */
+    .activity-icon-sm {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+
+    /* Grade display */
+    .grade-display h1 {
+        font-size: 2.25rem;
+    }
+
+    /* Dashboard feed items */
+    .dashboard-feed-scroll,
+    .dashboard-pending-scroll {
+        border-radius: 10px;
+    }
+
+    /* Scrollable containers with momentum */
+    .dashboard-feed-scroll,
+    .dashboard-pending-scroll {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-counter {
+        font-size: 1.25rem;
+    }
+
+    .circle-progress,
+    .progress-circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .circle-progress::before,
+    .progress-circle::before {
+        width: 56px;
+        height: 56px;
+    }
+
+    .circle-progress-value,
+    .progress-text {
+        font-size: 1rem;
+    }
+
+    .grade-display h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Sticky sidebar for dashboard layout */
+.sticky-sidebar {
+    position: sticky;
+    top: 80px;
+}
+
+.min-width-0 {
+    min-width: 0;
+}
+
+.feed-item:hover {
+    background-color: #f8f9fa;
+}
+
+.feed-item.hidden {
+    display: none !important;
+}
+
+#pending-list .list-group-item:hover {
+    background-color: #fff3cd20;
+}
+
+@media (max-width: 767.98px) {
+    .sticky-sidebar {
+        position: static;
+    }
+}

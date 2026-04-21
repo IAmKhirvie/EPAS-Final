@@ -1,0 +1,546 @@
+/* Common Page Styles - Matches Courses/Dashboard Theme */
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-header-left h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+}
+
+.page-header-left p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.page-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.page-header-actions .btn {
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ===== STAT CARDS (reusable) ===== */
+.page-stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-stat-card {
+    position: relative;
+    border-radius: var(--border-radius, 12px);
+    overflow: hidden;
+    padding: 1.25rem;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.page-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.page-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+.page-stat-card.green { background: linear-gradient(135deg, #0c3a2d 0%, #1a6b4a 100%); }
+.page-stat-card.blue { background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%); }
+.page-stat-card.emerald { background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%); }
+.page-stat-card.orange { background: linear-gradient(135deg, #e65100 0%, #f57c00 100%); }
+.page-stat-card.purple { background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%); }
+.page-stat-card.teal { background: linear-gradient(135deg, #004d40 0%, #00897b 100%); }
+.page-stat-card.red { background: linear-gradient(135deg, #b71c1c 0%, #e53935 100%); }
+.page-stat-card.indigo { background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%); }
+
+.page-stat-card .stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-stat-card .stat-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.page-stat-card .stat-decor {
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 0;
+}
+
+/* ===== WIDGET CARD (replaces Bootstrap card) ===== */
+.widget-card {
+    background: var(--surface);
+    border-radius: var(--border-radius, 12px);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.widget-card-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.widget-card-header h2,
+.widget-card-header h3,
+.widget-card-header h5,
+.widget-card-header h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.widget-card-header h2 i,
+.widget-card-header h3 i,
+.widget-card-header h5 i,
+.widget-card-header h6 i {
+    color: var(--primary);
+}
+
+.widget-card-header small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.widget-card-body {
+    padding: 1.25rem;
+}
+
+.widget-card-body.no-pad {
+    padding: 0;
+}
+
+/* ===== MODERN TABLE ===== */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-table thead th {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    background: var(--background, #f8f9fa);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.modern-table tbody td {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.modern-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.modern-table tbody tr:hover {
+    background: var(--background, #f8f9fa);
+}
+
+/* ===== CHART CONTAINER ===== */
+.chart-container {
+    position: relative;
+    padding: 1rem;
+}
+
+/* ===== PAGE GRID LAYOUT ===== */
+.page-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.page-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.page-grid.cols-8-4 { grid-template-columns: 2fr 1fr; }
+.page-grid.cols-4-8 { grid-template-columns: 1fr 2fr; }
+
+/* ===== EMPTY STATE ===== */
+.page-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+}
+
+.page-empty i {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.4;
+    display: block;
+}
+
+.page-empty h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.page-empty p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ===== BADGES ===== */
+.modern-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.modern-badge.success { background: rgba(25, 135, 84, 0.12); color: #198754; }
+.modern-badge.danger { background: rgba(220, 53, 69, 0.12); color: #dc3545; }
+.modern-badge.warning { background: rgba(255, 193, 7, 0.15); color: #997404; }
+.modern-badge.info { background: rgba(13, 110, 253, 0.12); color: #0d6efd; }
+.modern-badge.secondary { background: rgba(108, 117, 125, 0.12); color: #6c757d; }
+.modern-badge.primary { background: rgba(var(--primary-rgb, 12, 58, 45), 0.12); color: var(--primary); }
+
+/* ===== SEARCH BAR (reusable) ===== */
+.page-search {
+    position: relative;
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.page-search input {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    background: var(--surface);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.page-search input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15);
+}
+
+.page-search i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .page-stat-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .page-grid.cols-2,
+    .page-grid.cols-3,
+    .page-grid.cols-8-4,
+    .page-grid.cols-4-8 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-stat-cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+    .page-stat-card {
+        min-height: 95px;
+        padding: 1rem;
+    }
+    .page-stat-card .stat-value {
+        font-size: 1.4rem;
+    }
+    .page-stat-card .stat-label {
+        font-size: 0.7rem;
+    }
+    .page-header-left h1 {
+        font-size: 1.35rem;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ===== BOOTSTRAP CARD OVERRIDES — Match dashboard ===== */
+.card {
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.card-header {
+    background: var(--surface, #fff);
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.85rem 1.25rem;
+    font-weight: 700;
+}
+
+.card-header h5,
+.card-header .card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-footer {
+    background: var(--surface, #fff);
+    border-top: 1px solid #f0f0f0;
+    padding: 0.85rem 1.25rem;
+}
+
+/* Form controls inside cards */
+.card .form-control,
+.card .form-select {
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 0.88rem;
+    padding: 0.55rem 0.85rem;
+}
+
+.card .form-control:focus,
+.card .form-select:focus {
+    border-color: var(--primary, #0c3a2d);
+    box-shadow: 0 0 0 3px rgba(12, 58, 45, 0.08);
+}
+
+.card .form-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.card .form-text {
+    font-size: 0.75rem;
+}
+
+/* Buttons inside cards */
+.card .btn-primary {
+    background: var(--primary, #0c3a2d);
+    border-color: var(--primary, #0c3a2d);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.25rem;
+}
+
+.card .btn-primary:hover {
+    background: #0a3025;
+    border-color: #0a3025;
+}
+
+.card .btn-outline-secondary {
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.55rem 1.25rem;
+    border-color: #e0e0e0;
+}
+
+/* Container padding adjustment */
+.container-fluid.py-5 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+.container-fluid.py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+/* Page header refinement */
+.page-header-left h1 {
+    font-size: 1.5rem;
+    letter-spacing: -0.3px;
+}
+
+.page-header-actions .btn {
+    border-radius: 10px;
+}
+
+/* Stat card refinement — remove pattern, smoother */
+.page-stat-card {
+    border-radius: 16px;
+}
+
+.page-stat-card::before {
+    display: none;
+}
+
+.page-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Table refinement */
+.table {
+    font-size: 0.88rem;
+}
+
+.table thead th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted, #999);
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0.65rem 1rem;
+}
+
+.table tbody td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background: rgba(0,0,0,0.01);
+}
+
+/* Alert refinement */
+.alert {
+    border-radius: 12px;
+    font-size: 0.88rem;
+}
+
+/* Breadcrumb refinement */
+.breadcrumb {
+    font-size: 0.82rem;
+}
+
+/* ===== DARK MODE ===== */
+.dark-mode .card {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border, #333);
+}
+
+.dark-mode .card-header {
+    background: var(--card-bg, #1e1e1e);
+    border-bottom-color: var(--border, #333);
+}
+
+.dark-mode .card-footer {
+    background: var(--card-bg, #1e1e1e);
+    border-top-color: var(--border, #333);
+}
+
+.dark-mode .card .form-control,
+.dark-mode .card .form-select {
+    background: var(--background, #111);
+    border-color: var(--border, #333);
+    color: var(--text-primary, #e5e5e5);
+}
+
+.dark-mode .table thead th {
+    border-bottom-color: var(--border, #333);
+    color: var(--text-muted, #888);
+}
+
+.dark-mode .table tbody td {
+    border-bottom-color: rgba(255,255,255,0.03);
+}
+
+.dark-mode .table tbody tr:hover {
+    background: rgba(255,255,255,0.02);
+}
+
+.dark-mode .widget-card {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+.dark-mode .modern-table thead th {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.dark-mode .modern-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.dark-mode .page-stat-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .page-search input {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border);
+}

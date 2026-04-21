@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('code', '403')
+@section('icon', 'fas fa-shield-alt')
+@section('title', 'Access Denied')
+@section('message', 'You do not have permission to access this page. If you believe this is a mistake, please contact your administrator.')

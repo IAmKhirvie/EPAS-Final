@@ -1,0 +1,24 @@
+/* Overlay for slide-in panels (FAB sidebars, add user panel, etc.)
+   The .active class is toggled by FAB.js — z-index must be below slide panels */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-slide-panel-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dark mode overlay */
+.dark-mode .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}

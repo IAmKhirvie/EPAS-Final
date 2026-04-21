@@ -1,0 +1,121 @@
+/* Grades Page Responsive Styles */
+
+/* Hide less important columns on tablet */
+@media (max-width: 1200px) {
+    .grades-table th:nth-child(7),  /* Self-Checks */
+    .grades-table td:nth-child(7),
+    .grades-table th:nth-child(8),  /* Homeworks */
+    .grades-table td:nth-child(8) {
+        display: none;
+    }
+}
+
+/* Hide more columns on mobile */
+@media (max-width: 992px) {
+    .grades-table th:nth-child(2),  /* Student ID */
+    .grades-table td:nth-child(2),
+    .grades-table th:nth-child(3),  /* Section */
+    .grades-table td:nth-child(3),
+    .grades-table th:nth-child(9),  /* Completed */
+    .grades-table td:nth-child(9) {
+        display: none;
+    }
+}
+
+/* Compact view on small mobile */
+@media (max-width: 768px) {
+    .grades-table th:nth-child(6),  /* Competency */
+    .grades-table td:nth-child(6) {
+        display: none;
+    }
+
+    .grades-table th,
+    .grades-table td {
+        padding: 0.5rem !important;
+        font-size: 0.875rem;
+    }
+
+    .grades-table .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    /* Stack student info */
+    .grades-table td:first-child .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grades-table td:first-child img {
+        width: 32px !important;
+        height: 32px !important;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* Student grades page - make grade cards responsive */
+.grade-ring {
+    width: 120px;
+    height: 120px;
+}
+
+@media (max-width: 576px) {
+    .grade-ring {
+        width: 100px;
+        height: 100px;
+    }
+
+    .grade-ring .fs-1 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Compact progress bars */
+.grades-table .progress {
+    min-width: 40px;
+    height: 6px;
+}
+
+@media (max-width: 768px) {
+    /* Hide progress bar on very small screens, show just percentage */
+    .grades-table .progress {
+        display: none;
+    }
+}
+
+/* Dark mode support */
+.dark-mode .grades-table {
+    color: var(--card-text);
+}
+
+.dark-mode .grades-table th,
+.dark-mode .grades-table td {
+    border-color: var(--border);
+    background-color: var(--card-bg);
+}
+
+/* Progress bar heights */
+.progress-thin {
+    height: 10px;
+}
+
+.progress-completion {
+    height: 20px;
+    width: 80px;
+}
+
+@media (max-width: 576px) {
+    .progress-completion {
+        width: 60px;
+        height: 16px;
+    }
+}
+
+/* Grade scale dots */
+.grade-scale-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}

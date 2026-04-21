@@ -1,0 +1,22 @@
+.empty-state {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.empty-state i {
+    color: var(--text-muted, #6c757d);
+}
+
+.empty-state-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary, #333);
+}
+
+.dark-mode .empty-state i {
+    color: var(--dark-text-muted, #9ca3af);
+}
+
+.dark-mode .empty-state-title {
+    color: var(--dark-text-primary, #e5e7eb);
+}

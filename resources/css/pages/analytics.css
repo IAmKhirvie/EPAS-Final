@@ -1,0 +1,64 @@
+/* Analytics Dashboard Styles */
+
+/* Mini progress bars for table */
+.progress-mini {
+    height: 8px;
+    width: 100px;
+}
+
+/* Badge circles for rankings */
+.badge-circle {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chart containers */
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+.chart-container-sm {
+    height: 250px;
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .chart-container {
+        height: 250px;
+    }
+
+    .chart-container-sm {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .progress-mini {
+        width: 60px;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    .chart-container-sm {
+        height: 180px;
+    }
+
+    .badge-circle {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark mode support */
+.dark-mode .chart-container,
+.dark-mode .chart-container-sm {
+    background: var(--card-bg);
+}

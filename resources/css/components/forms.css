@@ -1,0 +1,138 @@
+/* Form styles */
+.search-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-container i {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: var(--primary);
+}
+
+.search-input {
+  padding-left: 40px;
+  border-radius: 50px;
+  border: 2px solid var(--primary-light);
+  background: var(--card);
+  color: var(--text-primary);
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(0, 127, 201, 0.3);
+  background: var(--card);
+  color: var(--text-primary);
+}
+
+.required-field::after {
+  content: "*";
+  color: var(--primary);
+  margin-left: 4px;
+}
+
+/* Form controls */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 127, 201, 0.25);
+  background: var(--card);
+  color: var(--text-primary);
+}
+
+/* Dark mode form styles */
+.dark-mode .form-control,
+.dark-mode .form-select {
+  background: var(--card);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.dark-mode .form-control::placeholder,
+.dark-mode .form-select::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* ===== MOBILE FORM ENHANCEMENTS ===== */
+@media (max-width: 1032px) {
+    /* Better form control sizing */
+    .form-control,
+    .form-select {
+        padding: 0.625rem 0.875rem;
+        font-size: 1rem; /* 16px prevents iOS zoom */
+        border-radius: 10px;
+    }
+
+    /* Improved form labels */
+    .form-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        margin-bottom: 0.375rem;
+    }
+
+    /* Better textarea sizing */
+    textarea.form-control {
+        min-height: 80px;
+    }
+
+    /* Stack input groups vertically on very small screens */
+    @media (max-width: 480px) {
+        .input-group-stacked {
+            flex-direction: column;
+        }
+
+        .input-group-stacked .form-control,
+        .input-group-stacked .btn {
+            width: 100%;
+            border-radius: 10px !important;
+        }
+
+        .input-group-stacked .btn {
+            margin-top: 0.5rem;
+        }
+    }
+
+    /* Improved validation feedback */
+    .invalid-feedback,
+    .valid-feedback {
+        font-size: 0.8125rem;
+        padding: 0.25rem 0;
+    }
+
+    /* Better file input */
+    .form-control[type="file"] {
+        padding: 0.5rem;
+    }
+
+    /* Checkbox and radio sizing */
+    .form-check {
+        padding: 0.5rem 0;
+        padding-left: 2rem;
+    }
+
+    .form-check-input {
+        margin-top: 0.2rem;
+    }
+
+    /* Form floating labels */
+    .form-floating > label {
+        font-size: 0.875rem;
+    }
+
+    /* Search input with icon */
+    .search-container {
+        position: relative;
+    }
+
+    .search-container i {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Dark mode form mobile */
+.dark-mode .form-control,
+.dark-mode .form-select {
+    border-color: var(--border);
+}

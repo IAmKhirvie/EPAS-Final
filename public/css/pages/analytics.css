@@ -1,0 +1,224 @@
+/* Analytics Dashboard Styles */
+
+/* Mini progress bars for table */
+.progress-mini {
+    height: 8px;
+    width: 100px;
+}
+
+/* Badge circles for rankings */
+.badge-circle {
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Chart containers */
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+.chart-container-sm {
+    height: 250px;
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .chart-container {
+        height: 250px;
+    }
+
+    .chart-container-sm {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .progress-mini {
+        width: 60px;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    .chart-container-sm {
+        height: 180px;
+    }
+
+    .badge-circle {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Dark mode support */
+.dark-mode .chart-container,
+.dark-mode .chart-container-sm {
+    background: var(--card-bg);
+}
+
+/* Student Analytics Dark Mode */
+.dark-mode .stat-card {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border-color, #333);
+}
+
+.dark-mode .stat-card-value {
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .stat-card-label {
+    color: var(--text-muted, #888);
+}
+
+.dark-mode .stat-card-icon.blue {
+    background: rgba(25, 118, 210, 0.15);
+}
+
+.dark-mode .stat-card-icon.green {
+    background: rgba(56, 142, 60, 0.15);
+}
+
+.dark-mode .stat-card-icon.purple {
+    background: rgba(123, 31, 162, 0.15);
+}
+
+.dark-mode .stat-card-icon.orange {
+    background: rgba(245, 124, 0, 0.15);
+}
+
+.dark-mode .analytics-section {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border-color, #333);
+}
+
+.dark-mode .analytics-section-title {
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .strengths-list li {
+    background: rgba(56, 142, 60, 0.15);
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .strengths-list li .strength-label i {
+    color: #4caf50;
+}
+
+.dark-mode .weaknesses-list li {
+    background: rgba(245, 124, 0, 0.15);
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .weaknesses-list li .weakness-label i {
+    color: #ff9800;
+}
+
+.dark-mode .module-table th {
+    color: var(--text-muted, #888);
+    border-bottom-color: var(--border-color, #333);
+}
+
+.dark-mode .module-table td {
+    color: var(--text-primary, #e0e0e0);
+    border-bottom-color: var(--border-color, #333);
+}
+
+.dark-mode .module-table tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .breakdown-chart-container {
+    background: var(--card-bg, #1e1e1e);
+}
+
+.dark-mode .empty-state {
+    color: var(--text-muted, #888);
+}
+
+.dark-mode .grade-pill.outstanding {
+    background: rgba(46, 125, 50, 0.3);
+    color: #81c784;
+}
+
+.dark-mode .grade-pill.very-satisfactory {
+    background: rgba(21, 101, 192, 0.3);
+    color: #64b5f6;
+}
+
+.dark-mode .grade-pill.satisfactory {
+    background: rgba(245, 127, 23, 0.3);
+    color: #ffb74d;
+}
+
+.dark-mode .grade-pill.fairly-satisfactory {
+    background: rgba(239, 108, 0, 0.3);
+    color: #ffb74d;
+}
+
+.dark-mode .grade-pill.dnm {
+    background: rgba(198, 40, 40, 0.3);
+    color: #ef9a9a;
+}
+
+.dark-mode .grade-pill.no-grade {
+    background: rgba(117, 117, 117, 0.3);
+    color: #bdbdbd;
+}
+
+/* Admin/Instructor Analytics Dashboard Dark Mode */
+.dark-mode .card-header.bg-white {
+    background: var(--card-bg, #1e1e1e) !important;
+    border-bottom-color: var(--border-color, #333);
+}
+
+.dark-mode .card-header.bg-white h5 {
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .card-header.bg-white small {
+    color: var(--text-muted, #888) !important;
+}
+
+.dark-mode .table-light {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .table-light th {
+    color: var(--text-primary, #e0e0e0) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark-mode .list-group-item {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border-color, #333);
+    color: var(--text-primary, #e0e0e0);
+}
+
+.dark-mode .list-group-flush .list-group-item {
+    border-left: 0;
+    border-right: 0;
+}
+
+.dark-mode .badge.bg-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary, #e0e0e0) !important;
+}
+
+/* Weekly Engagement boxes */
+.dark-mode .bg-primary.bg-opacity-10,
+.dark-mode .bg-success.bg-opacity-10,
+.dark-mode .bg-info.bg-opacity-10,
+.dark-mode .bg-danger.bg-opacity-10 {
+    background-color: rgba(var(--bs-primary-rgb), 0.15) !important;
+}
+
+.dark-mode .progress-mini {
+    background: var(--border-color, #333);
+}

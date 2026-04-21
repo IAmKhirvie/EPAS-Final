@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Certificate of Completion - Sample Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+        .page-wrapper {
+            width: 297mm;
+            height: 210mm;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .certificate {
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            border: 15px solid #0c3a2d;
+            position: relative;
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+        }
+        .certificate::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #ffb902;
+        }
+        /* Corner decorations */
+        .corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #6d9773;
+        }
+        .corner-tl { top: 20px; left: 20px; border-right: none; border-bottom: none; }
+        .corner-tr { top: 20px; right: 20px; border-left: none; border-bottom: none; }
+        .corner-bl { bottom: 20px; left: 20px; border-right: none; border-top: none; }
+        .corner-br { bottom: 20px; right: 20px; border-left: none; border-top: none; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #6d9773;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        .title {
+            font-size: 48px;
+            color: #6d9773;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(109, 151, 115, 0.1);
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #64748b;
+            letter-spacing: 3px;
+        }
+        .content {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .presented-to {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .recipient-name {
+            font-size: 42px;
+            color: #0c3a2d;
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            border-bottom: 2px solid #ffb902;
+            display: inline-block;
+            padding: 0 50px 10px;
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 15px;
+            color: #475569;
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .course-name {
+            font-size: 26px;
+            color: #6d9773;
+            font-weight: bold;
+            margin: 15px 0;
+            padding: 10px 30px;
+            display: inline-block;
+            border: 2px solid #ffb902;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+        }
+        .footer {
+            position: absolute;
+            bottom: 50px;
+            left: 70px;
+            right: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .signature-block {
+            text-align: center;
+            width: 180px;
+        }
+        .signature-line {
+            border-top: 2px solid #6d9773;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #475569;
+            font-weight: 600;
+        }
+        .signature-name {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 3px;
+        }
+        .center-block {
+            text-align: center;
+        }
+        .seal {
+            width: 90px;
+            height: 90px;
+            border: 4px solid #6d9773;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #6d9773;
+            text-align: center;
+            font-weight: bold;
+            margin: 0 auto 10px;
+            background: linear-gradient(135deg, #fff 0%, #fff8e1 100%);
+            box-shadow: inset 0 0 10px rgba(109, 151, 115, 0.1);
+        }
+        .date {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 600;
+        }
+        .certificate-number {
+            font-size: 10px;
+            color: #94a3b8;
+            margin-top: 5px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Print styles */
+        @media print {
+            body { background: white; padding: 0; }
+            .page-wrapper { box-shadow: none; }
+            .no-print { display: none; }
+        }
+
+        /* Controls */
+        .controls {
+            max-width: 297mm;
+            margin: 0 auto 20px;
+            padding: 15px;
+            background: #6d9773;
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .controls h3 {
+            margin-right: auto;
+        }
+        .controls button {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-print {
+            background: #10b981;
+            color: white;
+        }
+        .btn-print:hover {
+            background: #059669;
+        }
+        .controls select, .controls input {
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls no-print">
+        <h3>Certificate Preview</h3>
+        <label>Template:
+            <select id="templateSelect" onchange="location.href='sample-certificate-'+this.value+'.html'">
+                <option value="default">Default (Blue)</option>
+                <option value="gold">Gold Premium</option>
+                <option value="modern">Modern Minimal</option>
+                <option value="formal">Formal/Traditional</option>
+            </select>
+        </label>
+        <label>Paper:
+            <select id="paperSelect" onchange="changePaper()">
+                <option value="a4-landscape">A4 Landscape</option>
+                <option value="a4-portrait">A4 Portrait</option>
+                <option value="letter-landscape">Letter Landscape</option>
+                <option value="legal-landscape">Legal Landscape</option>
+            </select>
+        </label>
+        <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
+    </div>
+
+    <div class="page-wrapper" id="pageWrapper">
+        <div class="certificate" id="certificate">
+            <div class="corner corner-tl"></div>
+            <div class="corner corner-tr"></div>
+            <div class="corner corner-bl"></div>
+            <div class="corner corner-br"></div>
+
+            <div class="header">
+                <div class="logo">EPAS-E LEARNING MANAGEMENT SYSTEM</div>
+                <div class="title">Certificate</div>
+                <div class="subtitle">OF COMPLETION</div>
+            </div>
+
+            <div class="content">
+                <div class="presented-to">This is to certify that</div>
+                <div class="recipient-name">Juan Dela Cruz</div>
+                <div class="description">
+                    has successfully completed all requirements and demonstrated competency in
+                </div>
+                <div class="course-name">Electronic Products Assembly and Servicing NC II</div>
+                <div class="description">
+                    as prescribed by the EPAS-E Learning Management System curriculum.
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="signature-block">
+                    <div class="signature-line">Administrator</div>
+                    <div class="signature-name">School Administrator</div>
+                </div>
+
+                <div class="center-block">
+                    <div class="seal">
+                        OFFICIAL<br>SEAL
+                    </div>
+                    <div class="date">March 18, 2026</div>
+                    <div class="certificate-number">CERT-2026-A1B2C3</div>
+                </div>
+
+                <div class="signature-block">
+                    <div class="signature-line">Instructor</div>
+                    <div class="signature-name">Course Instructor</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const templates = {
+            default: {
+                border: '#6d9773',
+                accent: '#ffb902',
+                text: '#6d9773',
+                bg: 'linear-gradient(135deg, #fff 0%, #f8fafc 100%)'
+            },
+            gold: {
+                border: '#b45309',
+                accent: '#d97706',
+                text: '#92400e',
+                bg: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)'
+            },
+            green: {
+                border: '#047857',
+                accent: '#10b981',
+                text: '#065f46',
+                bg: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)'
+            },
+            minimal: {
+                border: '#374151',
+                accent: '#6b7280',
+                text: '#111827',
+                bg: '#ffffff'
+            }
+        };
+
+        function changeTemplate() {
+            const t = templates[document.getElementById('templateSelect').value];
+            const cert = document.getElementById('certificate');
+            cert.style.borderColor = t.border;
+            cert.style.background = t.bg;
+            document.querySelectorAll('.corner').forEach(c => c.style.borderColor = t.border);
+            document.querySelector('.title').style.color = t.text;
+            document.querySelector('.logo').style.color = t.text;
+            document.querySelector('.course-name').style.color = t.text;
+            document.querySelector('.course-name').style.borderColor = t.accent;
+            document.querySelector('.recipient-name').style.borderColor = t.accent;
+            document.querySelector('.seal').style.borderColor = t.border;
+            document.querySelector('.seal').style.color = t.border;
+            document.querySelectorAll('.signature-line').forEach(s => s.style.borderColor = t.border);
+            cert.querySelector('::before')?.style?.borderColor && (cert.style.setProperty('--accent', t.accent));
+        }
+
+        function changePaper() {
+            const paper = document.getElementById('paperSelect').value;
+            const wrapper = document.getElementById('pageWrapper');
+            const sizes = {
+                'a4-landscape': { w: '297mm', h: '210mm' },
+                'a4-portrait': { w: '210mm', h: '297mm' },
+                'letter-landscape': { w: '279.4mm', h: '215.9mm' },
+                'legal-landscape': { w: '355.6mm', h: '215.9mm' }
+            };
+            wrapper.style.width = sizes[paper].w;
+            wrapper.style.height = sizes[paper].h;
+        }
+    </script>
+</body>
+</html>

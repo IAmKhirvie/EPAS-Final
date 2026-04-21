@@ -1,0 +1,62 @@
+/* =====================================================
+   Z-INDEX SCALE
+   =====================================================
+   Centralized z-index management to prevent conflicts.
+   All z-index values should use these CSS variables.
+
+   SCALE (from bottom to top):
+   - Base content: 0-9
+   - Sticky elements: 10-99
+   - Fixed navigation: 100-199
+   - Sidebar/overlays: 200-299
+   - Dropdowns/popovers: 300-399
+   - Modals/dialogs: 400-499
+   - Tooltips: 500-599
+   - Slide panels: 600-699
+   - FAB: 700-799
+   - Overlays for panels: 800-899
+   - Top-level overlays: 900-999
+   ===================================================== */
+
+:root {
+    /* Base layers */
+    --z-base: 0;
+    --z-above: 1;
+
+    /* Sticky elements */
+    --z-sticky: 10;
+
+    /* Fixed navigation */
+    --z-navbar: 100;
+    --z-sidebar: 110;
+    --z-sidebar-backdrop: 105;
+
+    /* Dropdowns and popovers */
+    --z-dropdown: 300;
+    --z-popover: 310;
+
+    /* Tooltips */
+    --z-tooltip: 500;
+
+    /* Slide panels (FAB sidebars, add user panels) */
+    --z-slide-panel: 600;
+    --z-slide-panel-overlay: 590;
+
+    /* Floating Action Button */
+    --z-fab: 700;
+    --z-fab-options: 710;
+    --z-fab-backdrop: 690;
+
+    /* Modals */
+    --z-modal-backdrop: 800;
+    --z-modal: 810;
+
+    /* Top-level (errors, critical notifications) */
+    --z-toast: 900;
+    --z-critical: 999;
+}
+
+/* Dark mode - same z-index values (no change needed) */
+.dark-mode {
+    /* Z-index values are the same in dark mode */
+}

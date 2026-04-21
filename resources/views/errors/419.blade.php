@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('code', '419')
+@section('icon', 'fas fa-clock')
+@section('title', 'Session Expired')
+@section('message', 'Your session has expired due to inactivity. Please go back and refresh the page to continue.')

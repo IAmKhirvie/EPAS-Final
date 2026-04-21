@@ -1,0 +1,345 @@
+/* ===== WELCOME PAGE — Modern Minimalist ===== */
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    background: var(--background, #fafafa);
+    color: var(--text-primary, #1a1a2e);
+}
+
+/* ===== HERO ===== */
+.w-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.w-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #0c3a2d;
+}
+
+/* Slideshow slides */
+.w-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.5s ease, transform 8s ease;
+}
+
+.w-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Dark overlay so text is readable */
+.w-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 58, 45, 0.75);
+    z-index: 1;
+}
+
+.w-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.w-hero-text { flex: 1; }
+
+.w-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.w-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.2rem;
+}
+
+.w-title span { color: #6d9773; }
+
+.w-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+}
+
+.w-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.w-btn {
+    padding: 0.75rem 1.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.w-btn-primary {
+    background: #fff;
+    color: #0c3a2d;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.w-btn-primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    color: #0c3a2d;
+}
+
+.w-btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.3);
+}
+
+.w-btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+/* Hero Cards */
+.w-hero-cards {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.w-hcard {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: all 0.25s;
+}
+
+.w-hcard:hover {
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.w-hcard-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.w-hcard h4 { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.w-hcard p { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.5; margin: 0; }
+
+.w-hcard-icon {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+}
+
+/* ===== STATS BAR ===== */
+.w-stats {
+    background: #0c3a2d;
+    padding: 2.5rem 3rem;
+}
+
+.w-stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.w-stat { text-align: center; color: #fff; }
+.w-stat-num { font-size: 2rem; font-weight: 800; letter-spacing: -1px; }
+.w-stat-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; margin-top: 0.2rem; }
+
+/* ===== FEATURES ===== */
+.w-features { padding: 5rem 3rem; background: #fff; }
+
+.w-features-inner { max-width: 1200px; margin: 0 auto; }
+
+.w-section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    background: rgba(12,58,45,0.06);
+    color: #0c3a2d;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.w-section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.w-section-desc {
+    font-size: 0.95rem;
+    color: #888;
+    max-width: 500px;
+    margin-bottom: 3rem;
+}
+
+.w-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.w-feat {
+    background: #fafafa;
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    border: 1px solid #f0f0f0;
+    transition: all 0.25s;
+}
+
+.w-feat:hover {
+    background: #fff;
+    border-color: #d5e5d8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.w-feat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.w-feat h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; color: #1a1a2e; }
+.w-feat p { font-size: 0.82rem; color: #999; line-height: 1.6; margin: 0; }
+
+/* ===== ABOUT ===== */
+.w-about { padding: 5rem 3rem; background: var(--background, #fafafa); }
+
+.w-about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.w-about-text { flex: 1; }
+.w-about-text p { font-size: 0.9rem; color: #666; line-height: 1.7; margin-bottom: 1rem; }
+
+.w-about-actions { margin-top: 1.5rem; display: flex; gap: 0.65rem; flex-wrap: wrap; }
+.w-about-actions .w-btn { font-size: 0.85rem; padding: 0.65rem 1.4rem; }
+
+.w-about-img { flex: 1; }
+.w-about-img img { width: 100%; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+
+.w-about-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #e5efe8, #d5e5d8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(12,58,45,0.15);
+}
+
+/* ===== DARK MODE ===== */
+/* Dark mode: hero already has dark overlay, no changes needed */
+
+.dark-mode .w-features { background: var(--card-bg, #1a1a1a); }
+.dark-mode .w-section-title { color: var(--text-primary, #e5e5e5); }
+.dark-mode .w-section-badge { background: rgba(109,151,115,0.12); color: #6d9773; }
+
+.dark-mode .w-feat {
+    background: var(--background, #111);
+    border-color: var(--border, #333);
+}
+.dark-mode .w-feat:hover { background: var(--card-bg, #1e1e1e); border-color: #4a6b4e; }
+.dark-mode .w-feat h4 { color: var(--text-primary, #e5e5e5); }
+.dark-mode .w-feat p { color: #888; }
+
+.dark-mode .w-about-text p { color: #aaa; }
+
+.dark-mode .w-about-placeholder {
+    background: linear-gradient(135deg, #1a2e1f, #0c3a2d);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .w-hero { padding: 6rem 1.25rem 3rem; }
+    .w-hero-inner { flex-direction: column; gap: 2.5rem; }
+    .w-title { font-size: 2.2rem; }
+    .w-hero-cards { grid-template-columns: 1fr 1fr; }
+    .w-stats { padding: 1.5rem 1.25rem; }
+    .w-stats-inner { flex-wrap: wrap; gap: 1.5rem; }
+    .w-stat { flex: 1; min-width: 40%; }
+    .w-features { padding: 3rem 1.25rem; }
+    .w-features-grid { grid-template-columns: 1fr; }
+    .w-about { padding: 3rem 1.25rem; }
+    .w-about-inner { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 480px) {
+    .w-hero { padding: 5rem 1rem 2.5rem; }
+    .w-title { font-size: 1.8rem; }
+    .w-desc { font-size: 0.9rem; }
+    .w-hero-cards { grid-template-columns: 1fr; }
+    .w-btn { width: 100%; justify-content: center; }
+    .w-stats { padding: 1.25rem 1rem; }
+    .w-stat-num { font-size: 1.5rem; }
+}

@@ -1,0 +1,170 @@
+/* Slide-in Sidebar Styles */
+.slide-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: var(--card);
+    color: var(--text-primary);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: var(--z-slide-panel);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    border-left: 1px solid var(--border);
+}
+
+.slide-sidebar.active {
+    right: 0;
+}
+
+.slide-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--light);
+}
+
+.slide-sidebar-header h5 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.close-sidebar {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.close-sidebar:hover {
+    color: var(--primary-dark);
+}
+
+.slide-sidebar-content {
+    padding: 20px;
+    background: var(--card);
+    color: var(--text-primary);
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-slide-panel-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent body scroll when sidebar is open */
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* Dark mode styles */
+.dark-mode .slide-sidebar {
+    background: var(--card);
+    color: var(--text-primary);
+    border-left-color: var(--border);
+}
+
+.dark-mode .slide-sidebar-header {
+    background: var(--secondary);
+    border-bottom-color: var(--border);
+}
+
+.dark-mode .slide-sidebar-content {
+    background: var(--card);
+}
+
+/* ===== MOBILE SLIDE SIDEBAR ENHANCEMENTS ===== */
+@media (max-width: 1032px) {
+    .slide-sidebar {
+        width: 100%;
+        right: -100%;
+        border-left: none;
+        border-radius: 0;
+    }
+
+    .slide-sidebar.active {
+        right: 0;
+    }
+
+    .slide-sidebar-header {
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+    }
+
+    .slide-sidebar-header h5 {
+        font-size: 1.25rem;
+    }
+
+    .close-sidebar {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.05);
+        font-size: 1.125rem;
+    }
+
+    .slide-sidebar-content {
+        padding: 1rem;
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* Ensure form inputs are properly sized */
+    .slide-sidebar .form-control,
+    .slide-sidebar .form-select {
+        font-size: 1rem; /* 16px prevents iOS zoom */
+    }
+
+    /* Better submit button at bottom */
+    .slide-sidebar .d-grid {
+        position: sticky;
+        bottom: 0;
+        padding: 1rem 0;
+        background: var(--card);
+        margin: 0 -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-top: 1px solid var(--border);
+    }
+}
+
+/* Larger screens */
+@media (min-width: 1032px) {
+    .slide-sidebar {
+        width: 600px;
+        right: -600px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+    .slide-sidebar {
+        width: 700px;
+        right: -700px;
+    }
+}

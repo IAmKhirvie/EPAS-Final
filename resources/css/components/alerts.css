@@ -1,0 +1,105 @@
+/* Alert styles */
+.alert {
+  border: none;
+  border-left: 4px solid;
+}
+
+.alert-danger {
+  border-left-color: #dc3545;
+}
+
+.alert-success {
+  border-left-color: #28a745;
+}
+
+.alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 12px 20px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #c3e6cb;
+    }
+    
+.alert-success .close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #155724;
+}
+
+/* ===== MOBILE ALERT ENHANCEMENTS ===== */
+@media (max-width: 1032px) {
+    .alert {
+        border-radius: 12px;
+        padding: 0.875rem 1rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .alert i:first-child {
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+    }
+
+    .alert .btn-close {
+        padding: 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    /* Toast-style alerts for mobile */
+    .alert-toast {
+        position: fixed;
+        bottom: calc(60px + 1rem);
+        left: 1rem;
+        right: 1rem;
+        z-index: 1060;
+        border-left: none;
+        border: 1px solid;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        animation: slideUpAlert 0.3s ease-out;
+    }
+
+    @keyframes slideUpAlert {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Dark mode alert improvements */
+.dark-mode .alert-success {
+    background-color: rgba(40, 167, 69, 0.15);
+    color: #75d493;
+    border-color: rgba(40, 167, 69, 0.3);
+}
+
+.dark-mode .alert-danger {
+    background-color: rgba(220, 53, 69, 0.15);
+    color: #f08a93;
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.dark-mode .alert-warning {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #ffd54f;
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.dark-mode .alert-info {
+    background-color: rgba(13, 202, 240, 0.15);
+    color: #67d6ed;
+    border-color: rgba(13, 202, 240, 0.3);
+}

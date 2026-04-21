@@ -1,0 +1,5 @@
+@extends('errors.layout')
+@section('code', '503')
+@section('icon', 'fas fa-tools')
+@section('title', 'Under Maintenance')
+@section('message', 'The system is currently undergoing scheduled maintenance. We will be back shortly. Thank you for your patience.')

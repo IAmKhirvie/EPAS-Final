@@ -1,0 +1,100 @@
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary-dark);
+}
+
+.action-buttons .btn {
+  margin: 2px;
+}
+
+.badge {
+  font-weight: 500;
+}
+
+.badge.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+/* Dark mode button styles */
+.dark-mode .btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ===== MOBILE BUTTON ENHANCEMENTS ===== */
+@media (max-width: 1032px) {
+    /* Rounded pill buttons on mobile for modern look */
+    .btn {
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    /* Full-width button groups */
+    .d-grid .btn + .btn,
+    .btn-group-mobile .btn {
+        margin-top: 0.5rem;
+    }
+
+    /* Compact icon buttons */
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    /* Action row — horizontal scroll if too many buttons */
+    .action-row {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+    }
+
+    .action-row::-webkit-scrollbar {
+        display: none;
+    }
+
+    .action-row .btn {
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stack action buttons on very small screens */
+    .action-buttons .btn {
+        font-size: 0.8125rem;
+    }
+
+    .action-buttons .btn i {
+        margin-right: 0.25rem;
+    }
+
+    /* Hide button text, show only icons in tight spaces */
+    .btn-icon-only-mobile span {
+        display: none;
+    }
+}

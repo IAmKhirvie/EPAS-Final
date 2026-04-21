@@ -1,0 +1,6 @@
+System Functionality: Calendar
+Usability & UX : breadcrumb navigation, skeleton loading states, simplify the layout, empty states
+Performance & Efficiency : Redis, enable service ker, lazy load livewire, image optimization, database quiery optimization, eager, CDN, pagination on api responses.
+security : add 4, 5 6, 7, CSP,
+
+Originality innovation : 4. 
